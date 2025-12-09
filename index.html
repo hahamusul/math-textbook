@@ -18,13 +18,30 @@
         #error-message { color:red; margin-top:10px; font-weight:bold; }
 
         /* --- 헤더 및 내비게이션 --- */
-        header { background-color:#deb887; padding:20px; text-align:center; position:sticky; top:0; z-index:1000; }
+header { background-color:#deb887; padding:20px; text-align:center; position:sticky; top:0; z-index:1000; }
         header h1 { margin:0; color:white; font-size:1.8em; }
         nav ul { list-style:none; padding:0; margin:10px 0 0 0; display:flex; justify-content:center; gap:25px; }
         nav li { position:relative; }
         nav a { text-decoration:none; color:white; font-weight:bold; padding:6px 12px; border-radius:6px; transition:background 0.3s; display:inline-block; }
         nav a:hover { background-color:#c49a6c; }
-        nav ul ul { display:none; position:absolute; top:40px; left:0; background-color:#deb887; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2); padding:8px 0; min-width:190px; }
+        nav ul ul { 
+            display: none; 
+            position: absolute; 
+            top: 70%; /* 메뉴를 위로 끌어올림 */
+            left: 0; 
+            background-color: #deb887; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+            padding: 8px 0; 
+            min-width: 190px; 
+            z-index: 2000;
+            
+            /* ★ 핵심 비법: 눈에 안 보이는 투명한 막을 위에 씌움 ★ */
+            border-top: 30px solid transparent; 
+            background-clip: padding-box; /* 배경색이 투명 막에는 안 칠해지게 설정 */
+        }
+        /* ▲▲▲ 수정한 부분 ▲▲▲ */
+
         nav ul ul a { color:white; padding:10px 15px; display:block; white-space:nowrap; }
         nav li:hover>ul { display:block; }
 
@@ -370,3 +387,4 @@
 </script>
 </body>
 </html>
+
